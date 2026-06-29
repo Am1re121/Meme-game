@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="square" style="position: relative; width: 1538px; height: 150px; background: blue; left: -10px; top: -10px; "></div>
+    <h1 style="font-weight: bold; font-style: smooth curve; position: absolute; font-size: 60px; top: -30px; left: 640px; color: white;">MultiToll</h1>
+    <h1 style="font-size: 35px; position: absolute; top:75px; left: 700px; color:white; cursor: pointer;" onclick="back()">Назад</h1>
+    <input type="number" id="txt1" placeholder="TJK SOMONI" style="font-size: 40px; position: absolute; top: 200px; left: 100px;">
+    <input type="number" id="txt2" placeholder="RUSSIA RUBL" style="font-size: 40px; position: absolute; top: 350px; left: 100px;">
+    <h1 style="font-size: 30px; position: absolute; left: 100px; top: 140px;" onclick="gmntjk()">TJK/Somoni</h1>
+    <label style="font-size: 30px; position: absolute; left: 100px; top: 310px;">RUS/Rubl</label>
+    <h1 id="resRUS" style="font-size: 30px; position: absolute; border-radius: 20px; top: 340px; left: 750px;"></h1>
+    <button style="font-size: 20px; position: absolute; background-color: rgb(66, 66, 255); color: white; border-radius: 20px; top: 210px; left: 600px;" onclick="tjk()">Рассчитать</button>
+    <button style="font-size: 20px; position: absolute; background-color: rgb(66, 66, 255); color: white; border-radius: 20px; top: 360px; left: 600px;" onclick="rus()">Рассчитать</button>
+    <h1 id="resulttjk" style="font-size: 30px; position: absolute; border-radius: 20px; top: 190px; left: 750px;"></h1>
+<audio id="nishita" src="smertvnishite.mp3"></audio>
+<audio id="money" src="money talks.mp3"></audio>
+<audio id="gimn" src="gimntjk.mp3"></audio>
+    <script>
+        let dostizeniavnishite = false;
+        let dostizeniavbogatstve = false;
+        function tjk() {
+            let restjk =parseFloat(document.getElementById('txt1').value);
+            let ressomoni = parseFloat((restjk / 0.12).toFixed(2));
+            let resultBlock = document.getElementById('resulttjk');
+            resultBlock.innerHTML = `Результат: ${ressomoni} RUS/Rubl`;
+            
+            if(ressomoni <= 100){
+                localStorage.setItem('dostizeniavnishite', 'true');
+             resultBlock.innerHTML += `<br><img src="./nishitasecret.png" style="width:250px;">`;
+            document.getElementById('nishita').play();
+            }else if (ressomoni > 10000) {
+                localStorage.setItem('dostizeniavbogatstve', 'true');
+                document.getElementById('money').play();
+                document.getElementById('nishita').pause();
+            }
+          
+        }
+
+        function rus() {
+            let resrubl = parseFloat(document.getElementById('txt2').value);
+            let resrublsomoni = (resrubl * 0.12).toFixed(2);
+            document.getElementById('resRUS').innerText = `Результат: ${resrublsomoni} TJK/Somoni`;
+        }
+
+        function back() {
+            window.location.href = "index.html";
+        }
+
+        function gmntjk(){
+            document.getElementById('gimn').play();
+        }
+    </script>
+</body>
+</html>

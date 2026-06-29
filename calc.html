@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="square" style="position: relative; width: 1538px; height: 150px; background: blue; left: -10px; top: -10px; "></div>
+    <h1 style="font-weight: bold; font-style: smooth curve; position: absolute; font-size: 60px; top: -20px; left: 640px; color: white;">MultiToll</h1>
+    <input type="number" id="num1" placeholder="Enter first number" style="font-size: 40px; position: absolute; top: 200px; left: 100px;">
+    <input type="number" id="num2" placeholder="Enter second number" style="font-size: 40px; position: absolute; top: 200px; left: 900px;">
+    <button onclick="calculate()" style="font-size: 40px; position: absolute; top: 300px; left: 650px;" >Calculate</button>
+    <h1 id="result" style="font-size: 60px; position: absolute; top: 350px; left: 600px;"></h1>
+    <h1 style="font-size: 35px; position: absolute; top:75px; left: 700px; color:white; cursor: pointer;" onclick="Back()">Назад</h1>
+<audio id="play52" src="secret_sound.mp3"></audio>
+
+<script>
+let dostizenia52 = false;
+function calculate() {
+    const num1 = parseFloat(document.getElementById('num1').value);
+    const num2 = parseFloat(document.getElementById('num2').value);
+    const result = num1 + num2; 
+    document.getElementById('result').innerText = `Result: ${result}`;
+
+    if (isNaN(num1) || isNaN(num2)) {
+    document.getElementById('result').innerText = "Please enter valid numbers.";
+} else {
+    document.getElementById('result').innerText = `Result: ${result}`;
+    
+}
+
+
+if (Math.round(result) == 52) {
+document.getElementById('play52').play();
+localStorage.setItem('dostizenia52', 'true');
+}
+}
+
+function Back() {
+    window.location.href = "index.html";
+}
+</script>
+</body>
+</html>

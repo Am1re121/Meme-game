@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="square" style="position: relative; width: 1538px; height: 150px; background: blue; left: -10px; top: -10px; "></div>
+    <h1 style="font-weight: bold; font-style: smooth curve; position: absolute; font-size: 60px; top: -20px; left: 640px; color: white;">MultiToll</h1>
+    <input type="text" id="txt1" placeholder="Enter first text" style="font-size: 40px; position: absolute; top: 200px; left: 100px;">
+    <input type="text" id="txt2" placeholder="Enter second text" style="font-size: 40px; position: absolute; top: 200px; left: 900px;">
+    <button onclick="concatenate()" style="font-size: 40px; position: absolute; top: 200px; left: 650px;">Soedenit</button>
+    <h1 style="font-size: 35px; position: absolute; top:75px; left: 700px; color:white; cursor: pointer;" onclick="back()">Назад</h1>
+    <audio id="favoretgame" src="secretff.mp3"></audio>
+    <audio id="sechaspopularen" src="dicisecret.mp3"></audio>
+    
+    
+<h1 id="res" style="font-size: 60px; position: absolute; top: 350px; left: 600px;"></h1>
+    <script>
+let dostizeniaff = false;
+let dostizeniadikiy = false;
+let dostizeniaumniy = false;
+        function concatenate() {
+            const txt1 = document.getElementById('txt1').value;
+            const txt2 = document.getElementById('txt2').value;
+            const result = txt1 + '' + txt2; 
+            document.getElementById('res').innerText = `Rezultat: ${result}`;
+
+              if (result == 'ff' || result == 'freefire') {
+                localStorage.setItem('dostizeniaff', 'true');
+
+                document.getElementById('favoretgame').play();
+                document.getElementById('sechaspopularen').pause();
+                setTimeout(() => {
+                    document.getElementById('favoretgame').pause();
+                },  timeout = 35000);
+              }
+
+             if (result == 'дикийогурец'){
+                localStorage.setItem('dostizeniadikiy', 'true');
+             document.getElementById('sechaspopularen').play();
+             document.getElementById('favoretgame').pause();
+             setTimeout(() => {
+                document.getElementById('sechaspopularen').pause();
+            }, timeout = 15000);
+             }
+
+            if (result == 'умныйчелвочках'){
+                localStorage.setItem('dostizeniaumniy', 'true');
+            document.getElementById('res').innerHTML = `Rezultat: ${result} <br><img src="./umnisecret.jpeg" style="width:150px;">`;
+            document.getElementById('favoretgame').pause();
+            document.getElementById('sechaspopularen').pause();
+            }
+        
+        }
+
+        function back() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

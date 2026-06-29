@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="boss_chiloviyperen.png" style="position: absolute; width: 250px; left: 600px; top:-50px;">
+    <div id="stena1" class="square" style="position: absolute; width: 100px; height: 675px; background: rgb(153, 153, 153); top: -10px; left: -10px; border-radius: 20px;"></div>
+    <div id="stena2" class="square" style="position: absolute; width: 100px; height: 675px; background: rgb(153, 153, 153); top: 0px; left: 1430px; border-radius: 20px;"></div>
+    <h1 id="hpboss" style="position: absolute; top: 50px; left: 850px;">Boss HP: 100</h1>
+    <h1 id="hpyour" style="position: absolute; top: 550px; left: 1050px; font-size: 50px;">Your HP: 100</h1>
+    <button id="Attack" style="position: absolute; top: 550px; left: 600px; font-size: 40px; background-color: red; border-radius: 10px;" onclick="AttackBoss()">Атаковать !</button>
+    <button id="Attack2" style="position: absolute; top: 450px; left: 200px; font-size: 40px; background-color: gold; border-radius: 10px;" onclick="AttacksuperBoss()">Супер Атака !</button>
+    <button id="Attack2" style="position: absolute; top: 450px; left: 1000px; font-size: 40px; background-color: green; border-radius: 10px;" onclick="Aptec()">Аптечка</button>
+    <audio id="fight" src="fight.mp3"></audio>
+    <audio id="haha" src="ha_ha_ha.mp3"></audio>
+    <audio id="fatality" src="fatality.mp3"></audio>
+    <script>
+        document.getElementById('fight').play()
+
+        let hpbs = 100;
+        let yourHP = 100;
+        function updateHp() {
+            document.getElementById('hpboss').innerText = `Boss HP: ${hpbs}`;
+            document.getElementById('hpyour').innerText = `Your HP: ${yourHP}`;
+        }
+
+   setInterval(() => {
+            if(yourHP > 0) {
+                yourHP -= 5
+                updateHp()
+            }else{
+                document.getElementById('haha').play()
+                alert('💀 Game Over! Вы проиграли!')
+                window.location.href = "bossFight.html"
+            }
+        }, 1000)
+
+
+        setInterval(() => {
+            hpbs +=2
+             
+        }, 2000)
+
+        function AttacksuperBoss() {
+            let btn1 = document.getElementById('Attack2')
+            hpbs -= 30
+            updateHp()
+            btn1.style.display ="none"
+            setTimeout(() => {
+                btn1.style.display ="inline-block";
+            },10000)
+            checkwin()
+        }
+
+        function AttackBoss() {
+            let btn = document.getElementById('Attack')
+            hpbs -= 10
+            updateHp()
+            btn.style.display = "none";
+            setTimeout(() => {
+                btn.style.display ="inline-block";
+            },5000)
+            checkwin()
+        }
+function checkwin() {
+     if(hpbs < 0) {
+            document.getElementById('fatality').play()
+            alert('Вы победили !')
+            window.location.href = "win.html"
+        }
+}
+
+function Aptec() {
+    yourHP += 1
+    updateHp()
+}
+
+    </script>
+</body>
+</html>

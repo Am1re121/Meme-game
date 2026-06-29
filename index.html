@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <div class="square" style="position: relative; width: 1538px; height: 150px; background: blue; left: -10px; top: -10px; "></div>
+    <h1 style="font-weight: bold; font-style: smooth curve; position: absolute; font-size: 60px; top: -30px; left: 640px; color: white;" onclick="screamTo()">MultiToll</h1>
+    <h1 style="font-size: 30px; position: absolute; top:70px; left: 350px; color:white; cursor: pointer;" onclick="toCalc()">Калькулятор</h1>
+    <h1 style="font-size: 30px; position: absolute; top: -10px; left: 10px; color: white; " onclick="txtpls()">Тексто соединитель</h1>
+    <h1 style="font-size: 30px; position: absolute; top: 70px; left: 599px; color: white; " onclick="toKurs()">Курс рубля</h1>
+    <input id="poisk" type="text" placeholder="Поиск" style="font-size: 35px; position: absolute; top: 200px; left: 450px; width:600px;">
+    <button id="naiti" onclick="find()" style="font-size: 34px; position: absolute; top: 200px; left: 1065px;">Найти</button>
+    <img src="winning-cup.png" style="font-size: 0px; width: 50px; position: absolute; top: 10px; left: 1450px; cursor: pointer;" onclick="toDostizenia()">
+    <h1 id="screamImg"></h1>
+
+<script>
+function toCalc() {
+    window.location.href = "calc.html";
+}
+
+function find() {
+    let searchTerm = document.getElementById('poisk').value.trim().toLowerCase();
+    if (searchTerm == 'калькулятор') {
+        window.location.href = "calc.html";
+    } else {
+        alert("Ничего не найдено. Попробуйте другой запрос.");  
+    }
+}
+
+function txtpls() {
+    window.location.href = "txtpls.html";
+}
+
+function toKurs() {
+    window.location.href = "kurs.html";
+}
+
+function toDostizenia() {
+    window.location.href = "dostizenia.html";
+}
+
+function screamTo() {
+    document.getElementById('screamImg').innerHTML = `<img src="scream.jpg" style="width:1600px; position: absolute; top: 0px; left: 0px;">`; 
+    setTimeout(() => {
+        document.getElementById('screamImg').innerHTML = '';
+    },  timeout = 2000);
+}
+</script>
+
+</body>
+</html>

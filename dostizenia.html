@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="square" style="position: relative; width: 1538px; height: 150px; background: blue; left: -10px; top: -10px; "></div>
+    <h1 style="font-weight: bold; font-style: smooth curve; position: absolute; font-size: 60px; top: -30px; left: 640px; color: white;">MultiToll</h1>
+    <h1 style="font-size: 35px; position: absolute; top:75px; left: 200px; color:white; cursor: pointer;" onclick="back()">Назад</h1>
+    <h1 style="font-size: 35px; position: absolute; top:75px; left: 620px; color:white;">Найденные мемы</h1>
+
+    <div id="dostizenia1" class="square" style="position: relative; width: 1000px; height: 100px; background: rgb(153, 153, 153); top: 50px; left: 250px; border-radius: 20px;"></div>
+    <h1 style="position: absolute; width: 1000px; height: 100px;  top: 200px; left: 350px; border-radius: 20px; color: rgb(0, 0, 0);">Пятьдесят два</h1>
+    <h1 style="position: absolute; font-size: 20px; left: 350px; color: rgb(0, 0, 0);">Можно найти в калькуляторе</h1>
+    <h1 style="position: absolute; font-size: 60px; top: 180px; left: 275px; color: rgb(0, 0, 0);">52</h1>
+    <h1 id="proverka1" style="position: absolute; font-size: 30px; top: 220px; left: 1000px;">Не выполненно</h1>
+    <button style="font-size: 30px; position: absolute; top: 170px; left: 1290px; border-radius: 20px; color: blue; background-color: white;" onclick="clearDos()">Стереть все</button>
+
+
+    <div id="dostizenia2" class="square" style="position: relative; width: 1000px; height: 100px; background: rgb(153, 153, 153); top: 100px; left: 250px; border-radius: 20px;"></div>
+    <h1 style="position: absolute; width: 1000px; height: 100px;  top: 345px; left: 350px; border-radius: 20px; color: rgb(0, 0, 0);">Любимая игра</h1>
+    <h1 style="position: absolute; font-size: 20px; left: 350px; color: rgb(0, 0, 0); top: 400px;">Можно найти в тексто соеденителе</h1>
+    <h1 id="proverka2" style="position: absolute; font-size: 30px; top: 368px; left: 1000px;">Не выполненно</h1>
+    <img src="joystik.png" style="width: 70px; position: absolute; left: 270px; top: 370px;">
+
+
+    <div id="dostizenia3" class="square" style="position: relative; width: 1000px; height: 100px; background: rgb(153, 153, 153); top: 150px; left: 250px; border-radius: 20px;"></div>
+    <h1 style="position: absolute; width: 1000px; height: 100px;  top: 490px; left: 350px; border-radius: 20px; color: rgb(0, 0, 0);">Дикий огурец</h1>
+    <h1 style="position: absolute; font-size: 20px; left: 350px; color: rgb(0, 0, 0); top: 550px;">Можно найти в тексто соеденителе</h1>
+    <h1 id="proverka3" style="position: absolute; font-size: 30px; top: 520px; left: 1000px;">Не выполненно</h1>
+    <img src="sisimberdikiy.png" style="position: absolute; width: 70px; left: 270px; top: 520px;">
+
+
+    <div id="dostizenia4" class="square" style="position: relative; width: 1000px; height: 100px; background: rgb(153, 153, 153); top: 200px; left: 250px; border-radius: 20px;"></div>
+    <h1 style="position: absolute; width: 1000px; height: 100px;  top: 645px; left: 350px; border-radius: 20px; color: rgb(0, 0, 0);">Умный чел</h1>
+    <h1 style="position: absolute; font-size: 20px; left: 350px; color: rgb(0, 0, 0); top: 705px;">Можно найти в тексто соеденителе</h1>
+    <h1 id="proverka4" style="position: absolute; font-size: 30px; top: 670px; left: 1000px;">Не выполненно</h1>
+    <img src="umnisecret.jpeg" style="position: absolute; width: 70px; left: 270px; top: 670px;">
+
+    <div id="dostizenia5" class="square" style="position: relative; width: 1000px; height: 100px; background: rgb(153, 153, 153); top: 250px; left: 250px; border-radius: 20px;"></div>
+    <h1 style="position: absolute; width: 1000px; height: 100px;  top: 795px; left: 350px; border-radius: 20px; color: rgb(0, 0, 0);">Смерть в нишите</h1>
+    <h1 style="position: absolute; font-size: 20px; left: 350px; color: rgb(0, 0, 0); top: 855px;">Можно найти в курсе рубля</h1>
+    <h1 id="proverka5" style="position: absolute; font-size: 30px; top: 820px; left: 1000px;">Не выполненно</h1>
+    <img src="nishitasecret.png" style="position: absolute; width: 60px; left: 270px; top: 820px;">
+
+
+    <div id="dostizenia6" class="square" style="position: relative; width: 1000px; height: 100px; background: rgb(153, 153, 153); top: 300px; left: 250px; border-radius: 20px;"></div>
+    <h1 style="position: absolute; width: 1000px; height: 100px;  top: 940px; left: 350px; border-radius: 20px; color: rgb(0, 0, 0);">Money Talks</h1>
+    <h1 style="position: absolute; font-size: 20px; left: 350px; color: rgb(0, 0, 0); top: 1005px;">Можно найти в курсе рубля</h1>
+    <h1 id="proverka6" style="position: absolute; font-size: 30px; top: 970px; left: 1000px;">Не выполненно</h1>
+    <img src="money.png" style="position: absolute; width: 70px; left: 270px; top: 970px;">
+    <script>
+        
+function back() {
+    window.location.href = "index.html";
+}
+
+function clearDos() {
+    localStorage.clear();
+    location.reload();
+}
+            if(localStorage.getItem('dostizenia52') === 'true'){
+            document.getElementById('dostizenia1').style.backgroundColor = "rgb(0, 255, 0)";
+            document.getElementById('proverka1').innerText = "Выполнено";   
+        }
+
+        if (localStorage.getItem('dostizeniaff') === 'true') {
+            document.getElementById('dostizenia2').style.backgroundColor = "rgb(0, 255, 0)";
+            document.getElementById('proverka2').innerText = "Выполнено";   
+        }
+
+        if (localStorage.getItem('dostizeniadikiy') === 'true') {
+            document.getElementById('dostizenia3').style.backgroundColor = "rgb(0, 255, 0)";
+            document.getElementById('proverka3').innerText = "Выполнено";   
+        }
+
+        if (localStorage.getItem('dostizeniaumniy') === 'true') {
+            document.getElementById('dostizenia4').style.backgroundColor = "rgb(0, 255, 0)";
+            document.getElementById('proverka4').innerText = "Выполнено";   
+        }   
+
+        if (localStorage.getItem('dostizeniavnishite') === 'true') {
+            document.getElementById('dostizenia5').style.backgroundColor = "rgb(0, 255, 0)";
+            document.getElementById('proverka5').innerText = "Выполнено";   
+        }
+
+        if (localStorage.getItem('dostizeniavbogatstve') === 'true') {
+            document.getElementById('dostizenia6').style.backgroundColor = "rgb(0, 255, 0)";
+            document.getElementById('proverka6').innerText = "Выполнено";   
+        }
+
+        if (localStorage.getItem('dostizenia52') === 'true' && localStorage.getItem('dostizeniaff') === 'true' && localStorage.getItem('dostizeniadikiy') === 'true' && localStorage.getItem('dostizeniaumniy') === 'true' && localStorage.getItem('dostizeniavnishite') === 'true' && localStorage.getItem('dostizeniavbogatstve') === 'true') {
+            alert("Поздравляю! Ты нашел все мемы!");
+            alert('Босс файт начался!');
+            window.location.href = "bossfight.html";
+        }
+    </script>
+</body>
+</html>
